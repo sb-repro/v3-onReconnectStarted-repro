@@ -22,7 +22,11 @@ const GroupChannelListScreen = () => {
     navigation.setOptions({
       headerRight: () => {
         return (
-          <TouchableOpacity onPress={() => navigation.navigate('GroupChannelCreate')}>
+          <TouchableOpacity
+            onPress={() => {
+              // @ts-ignore
+              navigation.navigate('GroupChannelCreate');
+            }}>
             <Icon icon={'create'} />
           </TouchableOpacity>
         );

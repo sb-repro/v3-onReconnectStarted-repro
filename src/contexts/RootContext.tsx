@@ -1,6 +1,7 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import SendbirdChat, {SendBirdInstance, User} from 'sendbird';
 import {AsyncStorageStatic} from '@react-native-async-storage/async-storage/lib/typescript/types';
+import NetInfo from '@react-native-community/netinfo';
 
 interface Root {
   sdk: SendBirdInstance;
@@ -18,6 +19,21 @@ export const RootContext = createContext<Root | null>(null);
 export const RootContextProvider = ({children, appId, localCacheStorage}: Props) => {
   const initSDK = () => {
     const sdk = new SendbirdChat({appId, localCacheEnabled: Boolean(localCacheStorage)});
+
+    sdk.setOnlineListener(onOnline => {
+      return NetInfo.addEventListener(state => {
+        const isOnline = Boolean(state.isConnected || state.isInternetReachable);
+        if (isOnline) onOnline();
+      });
+    });
+
+    sdk.setOfflineListener(onOffline => {
+      return NetInfo.addEventListener(state => {
+        const isOnline = Boolean(state.isConnected || state.isInternetReachable);
+        if (!isOnline) onOffline();
+      });
+    });
+
     sdk.useAsyncStorageAsDatabase(localCacheStorage as any);
     return sdk;
   };

@@ -1225,6 +1225,11 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.2.0.tgz#7d6d789ae8edf73dc9bed1246cd48277edea8066"
   integrity sha512-o6aam+0Ug1xGK3ABYmBm0B1YuEKfM/5kaoZO0eHbZwSpw9UzDX4G5y4Nx/K20FHqUmJHkZmLvOUFYwN4N+HqKA==
 
+"@react-native-community/netinfo@^9.3.1":
+  version "9.3.1"
+  resolved "https://registry.yarnpkg.com/@react-native-community/netinfo/-/netinfo-9.3.1.tgz#a54e6d85e169e3c7855d61c3af0633ca35dba470"
+  integrity sha512-bGw//qiAuBEUKWBxF8NBNbxUsFUgLSDktmMRAHhTQU4cd0T6hda0Pd06OSrQZ5bfCmz4Hwn2ETN9+IytKnHZ9A==
+
 "@react-native/assets@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@react-native/assets/-/assets-1.0.0.tgz#c6f9bf63d274bafc8e970628de24986b30a55c8e"
@@ -6072,10 +6077,10 @@ send@0.18.0:
     range-parser "~1.2.1"
     statuses "2.0.1"
 
-sendbird@3.1.17:
-  version "3.1.17"
-  resolved "https://registry.yarnpkg.com/sendbird/-/sendbird-3.1.17.tgz#edcd1a1ebe423d0f49e062e2e9186168852c7122"
-  integrity sha512-2p1W1RtA0CF+PWR6vdyW2ojWzAQ1eVcsaqtnCnPOE5qFTwgR1kBINl24DwaZ/n8oERie3Lt/3RzE5TAqJM1NzQ==
+sendbird@^3.1.26:
+  version "3.1.26"
+  resolved "https://registry.yarnpkg.com/sendbird/-/sendbird-3.1.26.tgz#5a74e2af11ca9c0ba38bf2f09fe047e2ac495377"
+  integrity sha512-u+Chad6FEq1t3EevH5aac+TYygzKsq7/pi06hV1IKx6On/WbZqL+tBAefy3ZW/A/lmD+QWu/t8ZKD5U2kj7P3w==
   dependencies:
     agentkeepalive "4.1.4"
     axios "^0.27.2"
